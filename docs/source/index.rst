@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation of TRACO
-======================
+Documentation of translocation
+==============================
 
 .. toctree::
    :maxdepth: 2
@@ -21,11 +21,11 @@ Introduction
 
 .. _intro:
 
-TRACO is a script that helps to deal with multi-lattice translocation
+TRANSLOCATION is a Python3 module that helps to deal with multi-lattice translocation
 defects. If translocation defects are present, they may affect the quality
 of electron density dramatically.
 
-TRACO works with :ref:`MTZ files <mtz>` with intensities or structure factors,
+TRANSLOCATION works with :ref:`MTZ files <mtz>` with intensities or structure factors,
 :ref:`HKL files <HKL>` from XDS, :ref:`hkl files <hkl>` for SHELX, and also
 with :ref:`SCA files <sca>`.
 
@@ -34,7 +34,7 @@ with :ref:`SCA files <sca>`.
 Example
 -------
 
-The very first structure tested with TRACO is (Kristyna et al.).
+The very first structure tested with TRANSLOCATION is (Kristyna et al.).
 
 
 
@@ -44,7 +44,7 @@ Help
 
 .. code-block:: console
 
-   python3 traco.py --help
+   python3 -m translocation --help
 
 More information on :ref:`Help is here <help>`.
 
