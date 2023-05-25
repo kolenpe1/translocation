@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'traco'
+project = 'translocation'
 copyright = '2023, Petr Kolenko'
 author = 'Petr Kolenko'
 release = '0.1'

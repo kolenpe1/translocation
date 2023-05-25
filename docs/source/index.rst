@@ -30,9 +30,20 @@ TRANSLOCATION works with :ref:`MTZ files <mtz>` with intensities or structure fa
 with :ref:`SCA files <sca>`.
 
 
+Installation
+------------
+
+TRANSLOCATION is a module that can be installed using PIP from `https://pypi.org/translocation <https://pypi.org/translocation>`_.
+
+.. code-block:: console
+
+   python3 -m pip install translocation
+
 
 Example
 -------
+
+.. _example:
 
 The very first structure tested with TRANSLOCATION is (Kristyna et al.).
 

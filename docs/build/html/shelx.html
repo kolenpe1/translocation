@@ -4,13 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Working with hkl &mdash; traco 0.1 documentation</title>
+  <title>Working with hkl &mdash; translocation 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
@@ -30,7 +32,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            traco
+            translocation
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -55,7 +57,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">traco</a>
+          <a href="index.html">translocation</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -77,7 +79,7 @@
 <h1>Working with hkl<a class="headerlink" href="#working-with-hkl" title="Permalink to this heading"></a></h1>
 <p id="hkl"><em>hkl</em> files suitable for refinement with <em>SHELX</em> contain structure factors. They cannot be mixed up with <a class="reference internal" href="xds.html#xds-files"><span class="std std-ref">HKL files from XDS</span></a>.</p>
 <p><em>Example:</em></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 traco.py -o new_file.hkl --hkl original_file.hkl --k1 0.09 --fc1 0.4 0.3 0.0 --k2 0.13 --fc2 ...</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 -m translocation -o new_file.hkl --hkl original_file.hkl --k1 0.09 --fc1 0.4 0.3 0.0 --k2 0.13 --fc2 ...</span>
 </pre></div>
 </div>
 <p>The <em>new_file.hkl</em> contains corrected structure factors only. <strong>Please, archive the original_file.hkl!</strong></p>

@@ -4,13 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Documentation of TRACO &mdash; traco 0.1 documentation</title>
+  <title>Documentation of translocation &mdash; translocation 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
@@ -29,7 +31,7 @@
           
           
           <a href="#" class="icon icon-home">
-            traco
+            translocation
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -54,7 +56,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">traco</a>
+          <a href="#">translocation</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -62,7 +64,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Documentation of TRACO</li>
+      <li class="breadcrumb-item active">Documentation of translocation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -72,8 +74,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="documentation-of-traco">
-<h1>Documentation of TRACO<a class="headerlink" href="#documentation-of-traco" title="Permalink to this heading"></a></h1>
+  <section id="documentation-of-translocation">
+<h1>Documentation of translocation<a class="headerlink" href="#documentation-of-translocation" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -90,20 +92,27 @@
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
-<p id="intro">TRACO is a script that helps to deal with multi-lattice translocation
+<p id="intro">TRANSLOCATION is a Python3 module that helps to deal with multi-lattice translocation
 defects. If translocation defects are present, they may affect the quality
 of electron density dramatically.</p>
-<p>TRACO works with <a class="reference internal" href="mtz.html#mtz"><span class="std std-ref">MTZ files</span></a> with intensities or structure factors,
+<p>TRANSLOCATION works with <a class="reference internal" href="mtz.html#mtz"><span class="std std-ref">MTZ files</span></a> with intensities or structure factors,
 <a class="reference internal" href="shelx.html#hkl"><span class="std std-ref">HKL files</span></a> from XDS, <a class="reference internal" href="shelx.html#hkl"><span class="std std-ref">hkl files</span></a> for SHELX, and also
 with <a class="reference internal" href="sca.html#sca"><span class="std std-ref">SCA files</span></a>.</p>
 </section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
+<p>TRANSLOCATION is a module that can be installed using PIP from <a class="reference external" href="https://pypi.org/translocation">https://pypi.org/translocation</a>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 -m pip install translocation</span>
+</pre></div>
+</div>
+</section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
-<p>The very first structure tested with TRACO is (Kristyna et al.).</p>
+<p id="id1">The very first structure tested with TRANSLOCATION is (Kristyna et al.).</p>
 </section>
 <section id="help">
 <h2>Help<a class="headerlink" href="#help" title="Permalink to this heading"></a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 traco.py --help</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 -m translocation --help</span>
 </pre></div>
 </div>
 <p>More information on <a class="reference internal" href="help.html#id1"><span class="std std-ref">Help is here</span></a>.</p>

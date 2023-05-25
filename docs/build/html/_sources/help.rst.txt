@@ -7,13 +7,13 @@ Help
 
 .. code-block:: console
    
-   python3 traco.py --help
+   python3 -m translocation --help
    
    ####################################################
    # Correction for multi-lattice translocation defects
    ####################################################
 
-   usage: TRACO [-h] [-c CELL [CELL ...]] [--mtz_I MTZ_I] [--I_label I_LABEL] [--SIGI_label SIGI_LABEL] [--mtz_F MTZ_F] [--F_label F_LABEL]
+   usage: TRANSLOCATION [-h] [-c CELL [CELL ...]] [--mtz_I MTZ_I] [--I_label I_LABEL] [--SIGI_label SIGI_LABEL] [--mtz_F MTZ_F] [--F_label F_LABEL]
              [--SIGF_label SIGF_LABEL] [--hkl HKL] [--HKL HKL] [--sca SCA] [--sca_ignore SCA_IGNORE] [--k1 K1] [--fc1 FC1 [FC1 ...]]
              [--k2 K2] [--fc2 FC2 [FC2 ...]] [--k3 K3] [--fc3 FC3 [FC3 ...]] [--k4 K4] [--fc4 FC4 [FC4 ...]] [--k5 K5]
              [--fc5 FC5 [FC5 ...]] [--force] [-o OUTPUT_FILE]
