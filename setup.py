@@ -20,7 +20,7 @@ setup(
     ],
 #    entry_points={
 #        'console_scripts': [
-#            'traco = traco.source:main',
+#            'translocation = translocation.source:main',
 #        ],
 #    },
     zip_safe=False,

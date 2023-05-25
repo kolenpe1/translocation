@@ -40,6 +40,13 @@ TRANSLOCATION is a module that can be installed using PIP from `https://pypi.org
    python3 -m pip install translocation
 
 
+Dependencies
+------------
+
+TRANSLOCATION has no dependencies for text-based data files. For work with MTZ files, TRANSLOCATION depends on `GEMMI <https://gemmi.readthedocs.io>`_.
+
+
+
 Example
 -------
 
