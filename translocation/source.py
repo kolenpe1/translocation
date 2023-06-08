@@ -237,6 +237,7 @@ def factor(h, k, l):
 # CALCULATION USING SHELX hkl FILE
 
 def shelx_hkl():
+    global cell
     global hklin
     # read the file
     with open(hklin, "r") as file:
@@ -282,6 +283,7 @@ def shelx_hkl():
 # READING FROM XDS *.HKL FILE
 def read_HKL_file():
     global cell
+    global hklin
     # reading unit cell parameters
     with open(hklin, 'r') as file:
         lines = file.readlines()
@@ -335,6 +337,7 @@ def read_HKL_file():
 # READING FROM SCALEPACK *.sca FILE
 def read_SCA_file():
     global cell
+    global hklin
     # reading unit cell parameters
     with open(hklin, 'r') as file:
         lines = file.readlines()
@@ -365,6 +368,7 @@ def read_SCA_file():
 # WORKING WITH MTZ-I DATA 
 def mtz_I():
     global cell
+    global hklin
     # testing for modules
     try:
         import gemmi
@@ -412,6 +416,7 @@ def mtz_I():
 # WORKING WITH MTZ-F DATA 
 def mtz_F():
     global cell
+    global hklin
     # testing for modules
     try:
         import gemmi
@@ -477,6 +482,7 @@ def check_output():
 
 
 def main():
+    global hklin
 
     ##################################################
     # CHECK FOR NUMBER OF UNIT CELL PARAMETERS
@@ -546,6 +552,7 @@ def main():
         if os.path.exists(args.HKL):
             hklin = str(os.path.abspath(args.HKL))
             print('Input HKL file: ' + hklin)
+            check_output()
             read_HKL_file()
             print('Calculations finished.')
         else:
