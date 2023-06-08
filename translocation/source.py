@@ -530,7 +530,7 @@ def main():
     # CHECK FOR THE INPUT SCALEPACK FILE
     if args.sca:
         if os.path.exists(args.sca):
-            hklin = os.path.abspath(args.sca)
+            hklin = str(os.path.abspath(args.sca))
             print('Input SCA file: ' + str(hklin))
             check_output()
             read_SCA_file()
