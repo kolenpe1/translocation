@@ -361,13 +361,35 @@ def read_SCA_file():
         l = int(lines[i][8:12])
         I = float(lines[i][12:20])
         sigI = float(lines[i][20:28])
-        # testing function
+        # Calculation of factor
         fac = factor(h, k, l)
-        I = I / fac
+        if args.division:
+            I = I / ( fac * args.division )
+        else:
+            I = I / fac
         I = "{:.1f}".format(I)
-        sigI = sigI / fac
+        if args.division:
+            sigI = sigI / (fac * args.division)
+        else:
+            sigI = sigI / fac
         sigI = "{:.1f}".format(sigI)
 #        print(lines[i])
+        if len(str(I)) > 7:
+            if args.force:
+                print('Exceeding the format line. The result may be wrong.')
+                print('Consider division by factor 10 or even more.')
+            else:
+                print('Exceeding the format line. The result may be wrong. Exiting ...')
+                print('Consider division by factor 10 or even more. Use parameter \"-d 10\".')
+                exit()
+        if len(str(sigI)) > 7:
+            if args.force:
+                print('Exceeding the format line. The result may be wrong.')
+                print('Consider division by factor 10 or even more.')
+            else:
+                print('Exceeding the format line. The result may be wrong. Exiting ...')
+                print('Consider division by factor 10 or even more. Use parameter \"-d 10\".')
+                exit()
         vloz_i = (8 - len(str(I))) * ' ' + str(I)
         vloz_sigi = (8 - len(str(sigI))) * ' ' + str(sigI)
         # Puts the things into the line
