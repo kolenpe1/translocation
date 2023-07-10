@@ -10,7 +10,12 @@ Help
    python3 -m translocation --help
    
    ####################################################
-   # Correction for multi-lattice translocation defects
+   #
+   # Correction for MULTI-LATTICE TRANSLOCATION defects
+   #
+   # https://github.com/kolenpe1/translocation - source
+   # https://kmlinux.fjfi.cvut.cz/~kolenpe1/translocation - doc
+   # 
    ####################################################
 
    usage: TRANSLOCATION [-h] [-c CELL [CELL ...]] [--mtz_I MTZ_I] [--I_label I_LABEL] [--SIGI_label SIGI_LABEL] [--mtz_F MTZ_F] [--F_label F_LABEL]

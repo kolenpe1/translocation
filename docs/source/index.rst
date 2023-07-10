@@ -52,7 +52,10 @@ Example
 
 .. _example:
 
-The very first structure tested with TRANSLOCATION is (Kristyna et al.).
+The very first structure tested with TRANSLOCATION is S1 nuclease in complex with RNA segments (Adámková *et al.*, 2022).
+
+
+K. Adámková, T. Kovaľ, L.H. Oestergaard, J. Dušková, M. Malý, L. Švecová, T. Skálová, P. Kolenko, J. Dohnálek. (2022). Atomic resolution studies of S1 nuclease complexes reveal details of RNA interaction with the enzyme despite mutiple lattice-translocation defects. //Acta Cryst. D//**78**, 1194-1209.
 
 
 

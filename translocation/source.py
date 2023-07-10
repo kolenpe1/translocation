@@ -11,9 +11,13 @@ cell = []
 
 
 print("""
-####################################################
-# Correction for multi-lattice translocation defects
-####################################################
+##############################################################
+#
+# Correction for MULTI-LATTICE TRANSLOCATION defects
+#
+# https://github.com/kolenpe1/translocation - source
+# https://kmlinux.fjfi.cvut.cz/~kolenpe1/translocation - doc
+##############################################################
 """)
 
 
@@ -27,7 +31,7 @@ print("""
 
 
 parser=argparse.ArgumentParser(
-	prog='TRACO',
+	prog='python3 -m translocation',
 	formatter_class=argparse.RawDescriptionHelpFormatter,
 	)
 
@@ -72,6 +76,8 @@ parser.add_argument("--force", "-f", action='store_true',                      \
     help="forcing output file")
 parser.add_argument("-o", "--output_file", type=str,                           \
     help="defines the output file")
+parser.add_argument("-d", "--division", type=float,                            \
+    help="divides structure factors or intensities by a defined factor")
 args = parser.parse_args()
 
 
@@ -247,30 +253,37 @@ def shelx_hkl():
         h = int(lines[i][0:4])
         k = int(lines[i][4:8])
         l = int(lines[i][8:12])
-        f = float(lines[i][12:20])
-        sigf = float(lines[i][20:28])
+        intensity = float(lines[i][12:20])
+        sigi = float(lines[i][20:28])
         # calculation of new structure factors
         fac = factor(h, k, l)
-        f = f / fac
-        sigf = sigf / fac
+        # check if division argument is available
+        if args.division:
+            intensity = intensity  / (fac * args.division)
+            sigi = sigi / (fac * args.division)
+        else:
+            intesnity = intensity / fac
+            sigi = sigi / fac
         # transformation to two decimals
-        f = "{:.2f}".format(f)
-        sigf = "{:.2f}".format(sigf)
+        intensity = "{:.2f}".format(intensity)
+        sigi = "{:.2f}".format(sigi)
 #        print(lines[i])
-        if len(str(f)) > 8:
+        if len(str(intensity)) > 8:
             if args.force:            
                 print('Exceeding the format line. The result may be wrong.')
+                print('Consider division by factor 10 or even more.')
             else:
                 print('Exceeding the format line. Exiting ...')
+                print('Consider division by factor 10 or even more. Use parameter \"-d 10\".')
                 exit()
-        if len(str(sigf)) > 8:
+        if len(str(sigi)) > 8:
             if args.force:
                 print('Exceeding the format line. The result may be wrong.')
             else:
                 print('Exceeding the format line. Exiting ...')
                 exit()
-        vloz_i = (8 - len(str(f))) * ' ' + str(f)
-        vloz_sigi = (8 - len(str(sigf))) * ' ' + str(sigf)
+        vloz_i = (8 - len(str(intensity))) * ' ' + str(intensity)
+        vloz_sigi = (8 - len(str(sigi))) * ' ' + str(sigi)
         # Puts the things into the line
         lines[i] = lines[i][:12] + str(vloz_i) + vloz_sigi + lines[i][28:]
 #        print(lines[i])
@@ -347,7 +360,7 @@ def read_SCA_file():
         k = int(lines[i][4:8])
         l = int(lines[i][8:12])
         I = float(lines[i][12:20])
-        sigI = float(lines[i][20:])
+        sigI = float(lines[i][20:28])
         # testing function
         fac = factor(h, k, l)
         I = I / fac
